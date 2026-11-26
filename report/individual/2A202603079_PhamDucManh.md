@@ -15,6 +15,7 @@ MSSV: **2A202603079 — Phạm Đức Mạnh**. Task cá nhân: **D13-2A20260307
 | Tự kiểm | Đã xuất phiếu; 5/61 hộp có cảnh báo |
 | Ảnh minh chứng | 11/11 ảnh, đã đóng gói ZIP |
 | Tệp số liệu | Bảng A và phiếu tự kiểm đã được xuất bằng `sync` |
+| Đối chiếu số liệu | Hai số liệu đã tự đối chiếu khớp; kiểm chéo với học viên khác chưa thực hiện |
 
 Các frame và số hộp: s01f12: 7; s01f30: 5; s02f27: 5; s02f53: 5; s03f31: 3; s03f48: 6; s04f19: 14; s04f52: 5; s05f14: 6; s05f39: 5. Tổng cộng **61 cuboid Shape**; 5/61 hộp có cảnh báo tự kiểm. Frame ít nhất: s03f31 (3 hộp). Theo ghi nhận của người học, vùng hiển thị tối làm các cụm điểm và ranh giới vật khó phân biệt. Vì vậy, ở s01f12 chỉ gán 7 cuboid cho các vật xác định được; ở s03f31 chỉ xác định rõ 3 xe để gán nhãn, không suy đoán thêm vật cho đủ số lượng.
 
@@ -102,6 +103,17 @@ Hai mẫu đầu/cuối xa nhau theo khoảng cách khoảng 5.64 lần; số đ
 
 Giải trình phần tự sửa hình học: người học cho biết vùng hiển thị tối, khó xác định các điểm thuộc vật và ranh giới hộp nên chưa đủ chắc chắn để điều chỉnh thêm. Hiện chưa thực hiện hai chỉnh sửa hình học sau tự kiểm; phần đã hoàn thành là chuyển kiểu Track sang Shape như mô tả trên.
 
+**Tự đối chiếu số liệu và trạng thái kiểm chéo**
+
+Người tự kiểm: **2A202603079 — Phạm Đức Mạnh**. Hình thức hiện tại là tự đối chiếu trên máy, có công cụ hỗ trợ kiểm tra báo cáo với Bảng A.
+
+| Số liệu đối chiếu | Trong báo cáo | Trong Bảng A | Kết quả |
+|---|---|---|---|
+| Chiều cao s01f12 / #1 / Car | 1.520 m | 1.520 m | Khớp |
+| Khoảng cách ngang của hộp gần nhất: s05f14 / #2 / Car | 6.05 m | 6.05 m | Khớp |
+
+Kiểm chéo với học viên khác: **chưa thực hiện**; chưa có MSSV người kiểm hoặc kết quả đối chiếu do người khác xác nhận. Hai phép kiểm tra trên là tự đối chiếu, chưa thay thế bước kiểm chéo được mô tả trong hướng dẫn bài lab.
+
 ## 6. Ý nghĩa của nhãn, cách dùng AI và điều còn chưa chắc
 Model học nhãn 3D cần vị trí/kích thước trong hệ tọa độ vật lý theo mét; pixel thay đổi theo camera và khoảng cách nên không thay thế được kích thước thật. Vật thưa điểm cần quy tắc riêng để tránh tạo nhãn thiếu cơ sở, đồng thời giữ cách suy luận nhất quán cho các vật bị che hoặc ở xa.
 
@@ -110,6 +122,8 @@ Model học nhãn 3D cần vị trí/kích thước trong hệ tọa độ vật
 - **Cách dùng kết quả:** hỗ trợ thao tác kỹ thuật, chuyển kiểu hộp giữ nguyên hình học, chụp ảnh CVAT và tổng hợp báo cáo từ CSV. Phần đánh giá cuối về độ khớp nhãn thuộc người học.
 
 **Giới hạn quan sát và phần tự kiểm còn lại:**
+
+- Kiểm chéo với học viên khác: chưa thực hiện. Cần bổ sung MSSV người kiểm, hai số liệu được đối chiếu và kết quả khi đã làm bước này.
 
 - Tự sửa hình học: chưa thực hiện hai chỉnh sửa sau tự kiểm. Lý do người học ghi nhận là vùng hiển thị tối, khó phân biệt điểm thuộc vật và vị trí cần chỉnh. Năm cảnh báo ở mục 5 vẫn được giữ để tiếp tục đối chiếu khi có đủ cơ sở quan sát.
 - Số lượng: s01f12 có 7/8 hộp và s03f31 có 3/5 hộp theo mốc yêu cầu. Người học chỉ xác định chắc chắn được các vật đã gán nhãn; những vùng hiển thị tối còn lại không đủ cơ sở để nhận ra thêm vật. Đây là lý do thiếu số lượng, chưa phải xác nhận hai frame đã đạt mốc.
